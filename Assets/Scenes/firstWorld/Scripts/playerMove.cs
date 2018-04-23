@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class playerMove : MonoBehaviour
 {
-    public float maxSpeed = 12;
+    public float maxForwardSpeed = 12;
     public float forwardAcceleration = 2;
     public float slowDownAcceleration = 1;
-    public float steeringAcceleration = 3;
     private float currentForwardSpeed = 0;
 
-	void Start ()
+    public float maxSteeringSpeed = 8;
+    public float steeringAcceleration = 3;
+    private float currentSteeringSpeed = 0;
+
+    public float maxRaisingSpeed = 8;
+    public float raisingAcceleration = 3;
+    private float currentRaisingSpeed = 0;
+
+    void Start ()
     {
 		
 	}
@@ -26,30 +33,34 @@ public class playerMove : MonoBehaviour
     private void GetInput()
     {
         // Forward movement
-        if (currentForwardSpeed < maxSpeed && Input.GetAxis("Vertical") > 0)
+        if (currentForwardSpeed < maxForwardSpeed && Input.GetButton("Jump"))
         {
-            currentForwardSpeed += Input.GetAxis("Vertical") * forwardAcceleration;
+            currentForwardSpeed += forwardAcceleration * Time.deltaTime;
 
-            if (currentForwardSpeed > maxSpeed)
-                currentForwardSpeed = maxSpeed;
+            if (currentForwardSpeed > maxForwardSpeed)
+                currentForwardSpeed = maxForwardSpeed;
         }
-        else if (currentForwardSpeed > 0 && Input.GetAxis("Vertical") <= 0)
+        else if (currentForwardSpeed > 0 && !Input.GetButton("Jump"))
         {
-            currentForwardSpeed -= slowDownAcceleration;
+            currentForwardSpeed -= slowDownAcceleration * Time.deltaTime;
 
             if (currentForwardSpeed < 0)
                 currentForwardSpeed = 0;
         }
 
-        // Steering
-        if (Input.GetAxis("Horizontal") != 0)
+        // Going left/right
+        if (currentSteeringSpeed < maxSteeringSpeed && Input.GetAxis("Horizontal") != 0)
         {
-            // steer
+            currentSteeringSpeed += Input.GetAxis("Horizontal") * steeringAcceleration * Time.deltaTime;
+
+            if (currentSteeringSpeed > maxSteeringSpeed)
+                currentSteeringSpeed = maxSteeringSpeed;
         }
     }
 
     private void Move()
     {
         transform.position += transform.forward * currentForwardSpeed;
+        transform.Rotate(0, currentSteeringSpeed, 0);
     }
 }
