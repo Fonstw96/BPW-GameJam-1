@@ -1189,10 +1189,10 @@ MonoBehaviour:
   forwardBrake: 0.25
   maxSteeringSpeed: 2
   steeringAcceleration: 0.75
-  steeringBrake: 0.1667
+  steeringBrake: 0.75
   maxRaisingSpeed: 2
   raisingAcceleration: 0.75
-  raisingBrake: 0.1667
+  raisingBrake: 0.75
 --- !u!4 &319140303
 Transform:
   m_ObjectHideFlags: 0
