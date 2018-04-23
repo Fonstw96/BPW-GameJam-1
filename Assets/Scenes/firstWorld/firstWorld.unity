@@ -268,10 +268,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxForwardSpeed: 3
-  maxSteeringSpeed: 2.4
   forwardAcceleration: 0.6
-  slowDownAcceleration: 0.45
+  forwardBrake: 1
+  maxSteeringSpeed: 2.4
   steeringAcceleration: 0.9
+  steeringBrake: 0.2
+  maxRaisingSpeed: 2.4
+  raisingAcceleration: 0.9
+  raisingBrake: 0.2
 --- !u!4 &1260632974
 Transform:
   m_ObjectHideFlags: 0
