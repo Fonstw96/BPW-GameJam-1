@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerCollisionScript : MonoBehaviour {
 
-	public int [] IntIngredient;
+	public int[] IntIngredient = new int[3];
 	public GameObject Ingredient1;
 	public GameObject Ingredient2;
 	public Rigidbody rb;
@@ -20,6 +20,7 @@ public class PlayerCollisionScript : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.CompareTag ("Ingredient1")){
 			IntIngredient[1] += 1;
+			print (IntIngredient [1]);
 		}
 
 		if (other.gameObject.CompareTag ("Ingredient2")){
@@ -43,9 +44,7 @@ public class PlayerCollisionScript : MonoBehaviour {
 				Instantiate (Ingredient2, this.transform.position + new Vector3 (-3,3,-3), this.transform.rotation);
 			}
 
-			Vector3 planetBounce = new Vector3 (gameObject.transform.position.x + collision.transform.position.x, gameObject.transform.position.y + collision.transform.position.y ,gameObject.transform.position.z + collision.transform.position.z);
 
-			rb.AddForce (planetBounce, ForceMode.Force);
 
 
 		}
