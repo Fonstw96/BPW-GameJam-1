@@ -16,11 +16,12 @@ public class PlayerCollisionScript : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.CompareTag ("Ingredient1")){
 			IntIngredient1 += 1;
-			print (IntIngredient1);
 		}
 
 		if (other.gameObject.CompareTag ("Ingredient2")){
 			IntIngredient2 += 1;
+			print (IntIngredient2);
+
 		}
 
 	}
@@ -29,20 +30,22 @@ public class PlayerCollisionScript : MonoBehaviour {
 	void OnCollisionEnter(Collision collision){
 
 
-		if (collision.gameObject.CompareTag ("Planet")){
-			//lose materials 
-			if (IntIngredient1 >= 1) {
-				IntIngredient1 -= 1;
-				Instantiate (Ingredient1, this.transform.position + new Vector3 (3,3,3), this.transform.rotation);
-			}
-			if (IntIngredient2 >= 1) {
-				IntIngredient2 -= 1;
-				Instantiate (Ingredient2, this.transform.position + new Vector3 (-3,3,-3), this.transform.rotation);
-			}
+		if ((collision.gameObject.CompareTag ("Planet"))){
+			//if (collision.relativeVelocity.magnitude > 1) {
+				
+				//lose materials 
+				if (IntIngredient1 >= 1) {
+					IntIngredient1 -= 1;
+					Instantiate (Ingredient1, this.transform.position + new Vector3 (3, 3, 3), this.transform.rotation);
+				}
+				if (IntIngredient2 >= 1) {
+					IntIngredient2 -= 1;
+					Instantiate (Ingredient2, this.transform.position + new Vector3 (-3, 3, -3), this.transform.rotation);
+				}
 
 
 
-
+			//}
 		}
 	}
 }
