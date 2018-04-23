@@ -10,9 +10,10 @@ GameObject:
   - component: {fileID: 417506}
   - component: {fileID: 3330340}
   - component: {fileID: 2391538}
+  - component: {fileID: 135715198738540704}
   m_Layer: 0
   m_Name: rock_F05
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23,13 +24,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138634}
-  m_LocalRotation: {x: 0.0000000218557, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.63743365, y: 0.12352392, z: 0.36052665, w: 0.66965723}
+  m_LocalPosition: {x: -19.949999, y: -0.5637979, z: 45.240005}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -70.526, y: -61.936005, z: 102.578}
 --- !u!23 &2391538
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -82,3 +83,15 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 138634}
   m_IsPrefabParent: 1
+--- !u!135 &135715198738540704
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138634}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8245948
+  m_Center: {x: -0.102107346, y: 0.21085814, z: 0.15364729}
