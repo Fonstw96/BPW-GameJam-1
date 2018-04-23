@@ -36,11 +36,11 @@ public class PlayerCollisionScript : MonoBehaviour {
 				//lose materials 
 				if (IntIngredient1 >= 1) {
 					IntIngredient1 -= 1;
-					Instantiate (Ingredient1, this.transform.position + new Vector3 (3, 3, 3), this.transform.rotation);
+					Instantiate (Ingredient1, this.transform.position + new Vector3 (0, 15, 0), this.transform.rotation);
 				}
 				if (IntIngredient2 >= 1) {
 					IntIngredient2 -= 1;
-					Instantiate (Ingredient2, this.transform.position + new Vector3 (-3, 3, -3), this.transform.rotation);
+					Instantiate (Ingredient2, this.transform.position + new Vector3 (0, 15, 0), this.transform.rotation);
 				}
 
 
