@@ -8,6 +8,7 @@ public class PlayerCollisionScript : MonoBehaviour {
 	public GameObject Ingredient1;
 	public GameObject Ingredient2;
 	public Rigidbody rb;
+	public AudioSource PickupSound;
 	private Vector3 planetBounce;
     
 
@@ -20,6 +21,7 @@ public class PlayerCollisionScript : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Ingredient2")){
 			IntIngredient[1] += 1;
 			print (IntIngredient[1]);
+
 
 		}
 
