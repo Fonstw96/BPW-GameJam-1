@@ -1043,7 +1043,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiProgressText: {fileID: 980442293}
-  totalIngredients: 7
+  uiMyIngredient: {fileID: 1313425801}
+  totalIngredients: 3
+  myIngredientID: 0
 --- !u!1001 &254000069
 Prefab:
   m_ObjectHideFlags: 0
@@ -1273,15 +1275,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63e82bf85dcd2bf47978a0724e46309c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForwardSpeed: 3
-  forwardAcceleration: 0.5
-  forwardBrake: 0.25
-  maxSteeringSpeed: 2
-  steeringAcceleration: 0.75
-  steeringBrake: 0.75
-  maxRaisingSpeed: 2
-  raisingAcceleration: 0.75
-  raisingBrake: 0.75
+  maxForwardSpeed: 8
+  accelerationTime: 4
+  risingSpeed: 100
+  steeringSpeed: 100
 --- !u!4 &319140303
 Transform:
   m_ObjectHideFlags: 0
@@ -1308,8 +1305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d8f7beeddc5c0488d2666df51aba84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IntIngredient1: 0
-  IntIngredient2: 0
+  IntIngredient: 0000000000000000
   Ingredient1: {fileID: 1945529632518108, guid: e76338bc4f56d49419f24824a7b47f03,
     type: 2}
   Ingredient2: {fileID: 1108487985821216, guid: 85f3bb2103d1dac48a37d71efc205b94,
@@ -1340,7 +1336,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &361231718
 GameObject:
@@ -3884,7 +3880,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiProgressText: {fileID: 980442293}
-  totalIngredients: 7
+  uiMyIngredient: {fileID: 402297929}
+  totalIngredients: 3
+  myIngredientID: 1
 --- !u!135 &1713567378
 SphereCollider:
   m_ObjectHideFlags: 0
