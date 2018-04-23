@@ -4,26 +4,23 @@ using UnityEngine;
 
 public class PlayerCollisionScript : MonoBehaviour {
 
-	public int IntIngredient1 = 0;
-	public int IntIngredient2 = 0;
+	public int[] IntIngredient = new int[2];
 	public GameObject Ingredient1;
 	public GameObject Ingredient2;
 	public Rigidbody rb;
 	public AudioSource PickupSound;
 	private Vector3 planetBounce;
+    
 
 
-
-	void OnTriggerEnter(Collider other){
+    void OnTriggerEnter(Collider other){
 		if (other.gameObject.CompareTag ("Ingredient1")){
-			IntIngredient1 += 1;
-			PickupSound.Play();
-
+			IntIngredient[0] += 1;
 		}
 
 		if (other.gameObject.CompareTag ("Ingredient2")){
-			IntIngredient2 += 1;
-			PickupSound.Play();
+			IntIngredient[1] += 1;
+			print (IntIngredient[1]);
 
 
 		}
@@ -31,27 +28,25 @@ public class PlayerCollisionScript : MonoBehaviour {
 	}
 
 
-	void OnCollisionEnter(Collision collision){
+	//void OnCollisionEnter(Collision collision){
 
 
-		if ((collision.gameObject.CompareTag ("Planet"))){
-			//if (collision.relativeVelocity.magnitude > 1) {
+	//	if ((collision.gameObject.CompareTag ("Planet"))){
+	//		//if (collision.relativeVelocity.magnitude > 1) {
 				
-				//lose materials 
-				if (IntIngredient1 >= 1) {
-					IntIngredient1 -= 1;
-					Instantiate (Ingredient1, this.transform.position + new Vector3 (0, 15, 0), this.transform.rotation);
-
-				}
-				if (IntIngredient2 >= 1) {
-					IntIngredient2 -= 1;
-					Instantiate (Ingredient2, this.transform.position + new Vector3 (0, 15, 0), this.transform.rotation);
-
-				}
+	//			//lose materials 
+	//			if (IntIngredient[0] >= 1) {
+	//				IntIngredient[0] -= 1;
+	//				Instantiate (Ingredient1, this.transform.position + new Vector3 (0, 15, 0), this.transform.rotation);
+	//			}
+	//			if (IntIngredient[1] >= 1) {
+	//				IntIngredient[1] -= 1;
+	//				Instantiate (Ingredient2, this.transform.position + new Vector3 (0, 15, 0), this.transform.rotation);
+	//			}
 
 
 
-			//}
-		}
-	}
+	//		//}
+	//	}
+	//}
 }

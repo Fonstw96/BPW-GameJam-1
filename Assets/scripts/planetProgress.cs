@@ -6,7 +6,10 @@ using UnityEngine.UI;
 public class planetProgress : MonoBehaviour
 {
     public Text uiProgressText;
+    public Image uiMyIngredient;
+
     public int totalIngredients = 7;
+    public int myIngredientID;
 
 	void Start ()
     {
@@ -22,8 +25,11 @@ public class planetProgress : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            int currentIngredients = other.GetComponent<PlayerCollisionScript>().IntIngredient1;
+            int currentIngredients = other.GetComponent<PlayerCollisionScript>().IntIngredient[myIngredientID];
             uiProgressText.text = currentIngredients + " / " + totalIngredients;
+
+            if (currentIngredients == totalIngredients)
+                uiMyIngredient.color = Color.white;
         }
     }
 }
