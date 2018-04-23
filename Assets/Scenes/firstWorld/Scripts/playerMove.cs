@@ -28,8 +28,6 @@ public class playerMove : MonoBehaviour
     {
         GetInput();
         Move();
-
-        print(currentForwardSpeed);
 	}
 
     private void GetInput()
